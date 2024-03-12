@@ -1,0 +1,14 @@
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.GeneratedMSBuildEditorConfig.editorconfig
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.AssemblyInfoInputs.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.AssemblyInfo.cs
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.csproj.CoreCompileInputs.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\bin\Debug\net7.0\vectores.exe
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\bin\Debug\net7.0\vectores.deps.json
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\bin\Debug\net7.0\vectores.runtimeconfig.json
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\bin\Debug\net7.0\vectores.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\bin\Debug\net7.0\vectores.pdb
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\refint\vectores.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.pdb
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\vectores.genruntimeconfig.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\vectores\obj\Debug\net7.0\ref\vectores.dll
