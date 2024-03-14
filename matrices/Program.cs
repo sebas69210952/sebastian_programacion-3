@@ -1,261 +1,413 @@
 using System;
 
-namespace HelloWorld
+namespace programa
 {
-  class Program
-  {
-    static void Main(string[] args)
-    {   //vectores de numeros 
-        int[] numeros = new int[] {1,2,3,4,5,6,7,8};
-        //imprimirVector(numeros);
-        //vectores de letras 
-        char[] letras = new char[] {'a','b','c','d','e'};
-        //vectores de palabras
-        string[] palabras = new string[] {"hola","insanos","hello","hola","mundo"};
-
-        //generar un vector vacio
-        /*int[] vacio = new int[10];
-        Console.WriteLine("\nVector vacio:");
-        imprimirVectorVacio(vacio);*/
-
-    
-        //imprimirCambio();
-        //intercambio(numeros);
-        int[] vector = {1,2,3,4,5};
-        sumaVectorImparYPar(vector);
-        multiplosDe3(vector);
-       //LlenarVector(vector);
-
-       string palabra = Console.ReadLine();
-       llenarVectorString(palabra);
-      
-     
-    }
-
-    static void imprimirVector(int[] vector)
+    class FuncionesUtiles
     {
-        string vectorString = "";
-        foreach(int elemento in vector) {
-            vectorString = vectorString + elemento + " ";
-        }
-
-        Console.WriteLine(vectorString);
-    }
-
-    static void imprimirCambio()
-    {
-       
-       int[] numeros = {1,2,3,4,5,6,7,8};
-       imprimirVector(numeros);
-       numeros[2] = 15;
-       imprimirVector(numeros);
-
-    }
-    
-     static void intercambio(int[] cambio)
-    {
-       
-       int temp = cambio[3];
-       cambio[3] = cambio[2];
-       cambio[2] = temp;
-       Console.WriteLine("\n vector con posicion de intercambio: ");
-       imprimirVector(cambio);
-
-    }
-
-    static void sumavector(int[] vector)
-    {
-        int suma = 0;
-        foreach(int elemento in vector) {
-            suma = suma + elemento;
-            if (elemento > 4)
-            {
-                break;
-            }
-        }
-
-        Console.WriteLine(suma);
-    }
-
-    static void sumaVectorImpar(int[] vector)
-    {
-        int suma = 0;
-        foreach(int elemento in vector) {
+        static void Main(string[] args)
+        {
+            /*int[,] numero = LlenarMatrizSerpiente(4, 4); 
+            ImprimirMatriz(numero);*/
+            /*int[,] numeros = new int[5 , 7];
+            int numero = 1;
             
-            if ((elemento % 2) != 0)
+            for (int columnas = 0; columnas < numeros.GetLength(1); columnas++)
             {
-                suma = suma + elemento;
+                numeros[1, columnas] = 3;
+                //numeros = numeros + 2;
             }
+
+            for (int fila  = 0; fila < numeros.GetLength(0); fila++)
+            {
+                numeros[fila, 1] = 10;
+            }
+
+            int menor = numMenor(numeros.GetLength(0), numeros.GetLength(1));
+
+            for (int i = 0; i < menor; i++)
+            {
+                numeros[i, i] = 99;
+            }
+
+            
+            /*for (int fila = 0; fila < numeros.GetLength(0); fila++)
+            {
+                numeros [fila , 1] = 10;
+            }
+
+            for (int fila = 0; fila < numeros.GetLength(0); fila++)
+            {
+                numeros [fila , 1] = 10;
+            }
+            ImprimirMatriz(numeros);*/
+
+            int [,] mat = LlenarMatrizB(4,4);
+            ImprimirMatriz(mat);
+        }
+
+        /////////////NUMEROS////////////////////
+        ///
         
-        }
+        static int[,] LlenarMatrizB(int filas, int columnas)
+        {
+            int[,] matriz = new int[filas, columnas]; // Crear una matriz vacía con las dimensiones especificadas
+            int contador = 1;
 
-        Console.WriteLine(suma);
-    }
-
-    static void sumaVectorPar(int[] vector)
-    {
-        int suma = 0;
-        foreach(int elemento in vector) {
-            
-            if ((elemento % 2) == 0)
+            for (int c  = columnas -1 ; c >=0; c--)
             {
-                suma = suma + elemento;
-            }
-        
-        }
-
-        Console.WriteLine(suma);
-    }
-
-    static void sumaVectorImparYPar(int[] vector)
-    {
-        int par= 0;
-        int impar=0;
-
-        foreach(int elemento in vector) {
-            
-            if ((elemento % 2) == 0)
-            {
-                par = par + elemento;
+                for (int f = 0; f < filas; f++)
+                {
+                    matriz[f, c] = contador;
+                    contador = contador + 1;
+                    
+                     // Llenar la matriz con números del 1 al número de columnas
+                }
             }
 
+            return matriz;
+        }
+
+        static int[,] LlenarMatrizA(int filas, int columnas)
+        {
+            int[,] matriz = new int[filas, columnas]; // Crear una matriz vacía con las dimensiones especificadas
+            int contador = 1;
+
+            for (int f = filas -1 ; f >=0; f--)
+            {
+                for (int c = 0; c < columnas; c++)
+                {
+                    matriz[f, c] = contador;
+                    contador = contador + 1;
+                    
+                     // Llenar la matriz con números del 1 al número de columnas
+                }
+            }
+
+            return matriz;
+        }
+
+
+        static void EvaluarNota(int nota)
+        {
+            if (nota > 50)
+            {
+                Console.WriteLine("Aprobado");
+            }
             else
             {
-                impar = impar + elemento;
+                Console.WriteLine("Reprobado");
             }
-            
-        
         }
 
-        Console.WriteLine("la suma de pares es: " + par + "\nla suma de impares es: " + impar);
-    }
 
-    static void multiplosDe3(int[] vector)
-    {
-        int suma = 0;
-        foreach(int elemento in vector) {
-            
-            if ((elemento % 3) == 0)
+        static int mayor(int num1, int num2) // sacar el mayor de dos numeros
+        {
+            if (num1 > num2)
             {
-                suma = suma+1 ;
+                return num1;
             }
-        
-        }
-
-        Console.WriteLine(suma);
-    }
-    // tarea de pa mañana martes
-    /*/static void Recorrer(int[] vector, int numero, int posicion)
-    {
-        int numero = 10;
-        int posicion = 1;
-        for ()
-
-        Console.WriteLine(suma);
-    }*/
-
-    /*static void LlenarVector(int cantidad)
-    {
-        int[] vector = new int[cantidad];
-        int numero = 1;
-
-        for (int i = 0; i < cantidad; i++)
-        {
-            while (!sumaVectorPar(numero))
+            else
             {
-                numero++;
+                return num2;
             }
-
-            vector[i] = numero;
-            numero++;
         }
 
-        imprimirVector(vector);
-    }
-
-    static bool esPrimo(int numero)
-    {
-        if (numero <= 1)
+        static int numMenor(int num1, int num2) // sacar el mayor de dos numeros
         {
-            return false;
+            if (num1 < num2)
+            {
+                return num1;
+            }
+            else
+            {
+                return num2;
+            }
         }
 
-        for (int i = 2; i * i <= numero; i++)
+        static int suma_elementos(int elemento1, int elemento2) //sumar dos numeros
         {
-            if (numero % i == 0)
+            int suma = elemento1 + elemento2;
+            return suma;
+
+        }
+
+        static void rotarNumero() // poner el ultimo numero al inicio
+        {
+            Console.Write("Ingrese un número: ");
+            string input = Console.ReadLine();
+
+            // Rotar los dígitos
+            char lastDigit = input[input.Length - 1];
+            string rotatedNumber = lastDigit + input.Substring(0, input.Length - 1);
+
+            Console.WriteLine("Número rotado: " + rotatedNumber);
+        }
+
+        static int contarDigitos(int numero) // devuelve cantidad de digitos de un numero
+        {
+            return numero.ToString().Length;
+        }
+
+        static bool esPar(int numero) // devuelve True si es par
+        {
+            if ((numero % 2) == 0)
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
         }
-        return true;
-    }
 
-    static void LlenarVectoresprimo(int cantidad)
-    {
-        int[] vector = new int[cantidad];
-        int numero = 1;
-
-        for (int i = 0; i < cantidad; i++)
+        static bool esPrimo(int numero) // devuelve true si es primo
         {
-            while (!esPar(numero))
+            if (numero <= 1)
             {
-                numero++;
+                return false;
             }
 
-            vector[i] = numero;
-            numero++;
-        }
+            for (int i = 2; i * i <= numero; i++)
+            {
+                if (numero % i == 0)
+                {
+                    return false;
+                }
+            }
 
-        imprimirVector(vector);
-    }*/
-
-    //ver par
-    static bool esPar(int numero)
-    {
-        if ((numero % 2)==1)
-        {
             return true;
         }
-        else
+
+        static void FiltrarDigitosImpares(int numero) //pide un numero y revuelve el numero pero solo los digitos impares
         {
-            return false;
+            int resultado = 0;
+            int potencia = 1;
+
+            // Recorrer cada dígito del número
+            while (numero != 0)
+            {
+                int digito = numero % 10; // saco el ultimo digito en una variable
+
+                // Si el dígito es impar, agregarlo al resultado
+                if (digito % 2 != 0) //si el el resto entre un numero dividido en 2 es 0, es par
+                {
+                    resultado += digito * potencia; // hace que el numero se vaya colocando delante 
+                    potencia *= 10;
+                }
+
+                // Dividir el número por 10 para pasar al siguiente dígito
+                numero /= 10;
+            }
+
+            Console.WriteLine("El resultado es: " + resultado);
         }
 
-    }
-    // imprimir letras
-    static void imprimirVectorLetras(char[] vector)
-    {
-        string vectorString = "";
-        foreach(int elemento in vector) {
-            vectorString = vectorString + elemento + " ";
-        }
 
-        Console.WriteLine(vectorString);
-    }
+        ///////// STRINGS
+        ///
 
-    static void llenarVectorString(string palabra)
-    {
-        char[] letras = new char[palabra.Length];
-        for (int i = 0; i < palabra.Length; i++)
+        ///cuenta la cantidad de vocales de una palabra
+        static void contarVocales()
         {
-            letras[i] = palabra[i];
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine().ToLower(); // Convertir la palabra a minúsculas para comparar
+
+            int contadorVocales = 0;
+
+            foreach (char letra in palabra)
+            {
+                if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+                {
+                    contadorVocales++;
+                }
+            }
+
+            Console.WriteLine("La palabra ingresada tiene " + contadorVocales + " vocales.");
+
         }
 
-        imprimirVectorLetras(letras);
-       
+        ///contar cuantas palabras tiene una oracion
+        static void contarPalabras()
+        {
+            Console.Write("Ingrese una oración: ");
+            string oracion = Console.ReadLine();
+
+            int contadorPalabras = 0;
+            bool enPalabra = false;
+
+            foreach (char caracter in oracion)
+            {
+                if (char.IsLetter(caracter))
+                {
+                    if (!enPalabra)
+                    {
+                        contadorPalabras++;
+                        enPalabra = true;
+                    }
+                }
+                else
+                {
+                    enPalabra = false;
+                }
+            }
+
+            Console.WriteLine("La oración ingresada tiene " + contadorPalabras + " palabras.");
+        }
+
+        static bool existe(string oracion, string palabra)
+        {        
+            // Verificar si la palabra está en la oración
+            bool palabraEnOracion = oracion.Contains(palabra);
+
+            return palabraEnOracion;
+        }
+
+
+
+        /////////VECTORES///////////////////////
+        static void LlenarVector(int cantidad)
+        {
+
+            int[] vector = new int[cantidad];
+            int numero = 1;
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                while (!esPar(numero))
+                {
+                    numero++;
+                }
+                vector[i] = numero;
+                numero++;
+            }
+            imprimirVector(vector);
+
+        }
+
+        static void llenarVectorString(string palabra)
+        {
+            char[] letras = new char[palabra.Length];
+
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                letras[i] = palabra[i];
+            }
+
+            Console.WriteLine("El vector llenado con las letras de la palabra es:");
+            imprimirVector(letras);
+        }
+
+        static void llenarVectorPalabras(string oracion)
+        {
+            string[] palabras = oracion.Split(' ');
+
+            Console.WriteLine("Las palabras de la oración en un vector son:");
+            imprimirVector(palabras);
+        }
+
+
+
+        static T[] invertirVector<T>(T[] vector)
+        {
+            T[] vectorInvertido = new T[vector.Length];
+
+            for (int i = 0; i < vector.Length; i++)
+            {
+                vectorInvertido[i] = vector[vector.Length - 1 - i];
+            }
+
+            return vectorInvertido;
+        }
+
+
+        static void imprimirVector<T>(T[] vector)
+        {
+            foreach (T elemento in vector)
+            {
+                Console.Write(elemento + " ");
+            }
+            Console.WriteLine();
+        }
+
+        /////////MATRICES///////////////////////
+
+        //// Llenar la matriz con los números del 1 al 5 en cada fila
+        static int[,] LlenarMatriz(int filas, int columnas)
+        {
+            int[,] matriz = new int[filas, columnas]; // Crear una matriz vacía con las dimensiones especificadas
+
+            for (int fila = 0; fila < filas; fila++)
+            {
+                for (int columna = 0; columna < columnas; columna++)
+                {
+                    matriz[fila, columna] = columna + 1; // Llenar la matriz con números del 1 al número de columnas
+                }
+            }
+
+            return matriz;
+        }
+        //// Llenar la matriz con los números seguidos escalonada superior
+        static int[,] LlenarMatrizEscalonadaSuperior(int filas, int columnas)
+        {
+            int[,] matriz = new int[filas, columnas]; // Crear una matriz vacía con las dimensiones especificadas
+
+            int numero = 1; // Inicializar el primer número a colocar
+
+            for (int fila = 0; fila < filas; fila++)
+            {
+                for (int columna = fila; columna < columnas; columna++) // Comenzar a colocar números desde la diagonal superior
+                {
+                    matriz[fila, columna] = numero++; // Asignar el número actual y luego incrementarlo
+                }
+            }
+
+            return matriz;
+        }
+
+
+
+        // Llenar la matriz con los números del 1 al 25 en forma de serpiente
+        static int[,] LlenarMatrizSerpiente(int filas, int columnas)
+        {
+            int[,] matriz = new int[filas, columnas]; // Crear una matriz vacía con las dimensiones especificadas
+
+            int valor = 1;
+            for (int fila = 0; fila < filas; fila++)
+            {
+                // Determinar la dirección de llenado de la fila (izquierda a derecha o derecha a izquierda)
+                bool derecha = fila % 2 == 0;
+
+                // Llenar la fila en la dirección determinada
+                if (derecha)
+                {
+                    for (int columna = 0; columna < columnas; columna++)
+                    {
+                        matriz[fila, columna] = valor++;
+                    }
+                }
+                else
+                {
+                    for (int columna = columnas - 1; columna >= 0; columna--)
+                    {
+                        matriz[fila, columna] = valor++;
+                    }
+                }
+            }
+
+            return matriz;
+        }
+
+
+        static void ImprimirMatriz<T>(T[,] matriz)
+        {
+            for (int fila = 0; fila < matriz.GetLength(0); fila++)
+            {
+                for (int columna = 0; columna < matriz.GetLength(1); columna++)
+                {
+                    Console.Write(matriz[fila, columna] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
-
-
-    
-
-
-
-    
-
-
-    
-
-   
- }
- 
 }

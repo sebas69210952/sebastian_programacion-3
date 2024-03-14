@@ -1,0 +1,14 @@
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.GeneratedMSBuildEditorConfig.editorconfig
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.AssemblyInfoInputs.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.AssemblyInfo.cs
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.csproj.CoreCompileInputs.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\bin\Debug\net7.0\matrices.exe
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\bin\Debug\net7.0\matrices.deps.json
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\bin\Debug\net7.0\matrices.runtimeconfig.json
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\bin\Debug\net7.0\matrices.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\bin\Debug\net7.0\matrices.pdb
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\refint\matrices.dll
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.pdb
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\matrices.genruntimeconfig.cache
+D:\srojsa\programacion 3\Nueva carpeta\sebastian_programacion-3\matrices\obj\Debug\net7.0\ref\matrices.dll
