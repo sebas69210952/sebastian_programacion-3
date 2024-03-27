@@ -2,3 +2,13 @@ D:\clase numero\obj\Debug\net7.0\clase numero.GeneratedMSBuildEditorConfig.edito
 D:\clase numero\obj\Debug\net7.0\clase numero.AssemblyInfoInputs.cache
 D:\clase numero\obj\Debug\net7.0\clase numero.AssemblyInfo.cs
 D:\clase numero\obj\Debug\net7.0\clase numero.csproj.CoreCompileInputs.cache
+D:\clase numero\bin\Debug\net7.0\clase numero.exe
+D:\clase numero\bin\Debug\net7.0\clase numero.deps.json
+D:\clase numero\bin\Debug\net7.0\clase numero.runtimeconfig.json
+D:\clase numero\bin\Debug\net7.0\clase numero.dll
+D:\clase numero\bin\Debug\net7.0\clase numero.pdb
+D:\clase numero\obj\Debug\net7.0\clase numero.dll
+D:\clase numero\obj\Debug\net7.0\refint\clase numero.dll
+D:\clase numero\obj\Debug\net7.0\clase numero.pdb
+D:\clase numero\obj\Debug\net7.0\clase numero.genruntimeconfig.cache
+D:\clase numero\obj\Debug\net7.0\ref\clase numero.dll

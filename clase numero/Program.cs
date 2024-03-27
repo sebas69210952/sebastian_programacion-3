@@ -4,12 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Numero.ejercicio1();
-        /*Numero.ejercicio2();
-        Numero.ejercicio3();
-        Numero.ejercicio4();
-        Numero.ejercicio5();*/
+        Numeros.ejercicio1();
+        Numeros.ejercicio2();
+        Numeros.ejercicio3();
+        Numeros.ejercicio4();
+        Numeros.ejercicio5();
     }
-
-    
 }
