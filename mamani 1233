@@ -1,0 +1,70 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            int[] vectorOriginal = {1, 2, 3, 2, 1};
+            int[] vectorVolteado = VoltearVector(vectorOriginal);
+
+            ImprimirVector(vectorVolteado);
+
+            if (EsCapicua(vectorOriginal, vectorVolteado))
+            {
+                throw new VolteoException("El vector es capicúa");
+            }
+        }
+        catch (VolteoException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Gracias por el uso.");
+        }
+    }
+
+    static int[] VoltearVector(int[] vector)
+    {
+        int[] resultado = new int[vector.Length];
+        for (int i = 0; i < vector.Length; i++)
+        {
+            resultado[i] = vector[vector.Length - 1 - i];
+        }
+        return resultado;
+    }
+
+    static bool EsCapicua(int[] vectorOriginal, int[] vectorVolteado)
+    {
+        for (int i = 0; i < vectorOriginal.Length; i++)
+        {
+            if (vectorOriginal[i] != vectorVolteado[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static void ImprimirVector(int[] vector)
+    {
+        foreach (int elemento in vector)
+        {
+            Console.Write($"{elemento} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+class VolteoException : Exception
+{
+    public VolteoException(string message) : base(message)
+    {
+    }
+}
