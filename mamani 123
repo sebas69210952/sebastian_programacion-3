@@ -1,0 +1,72 @@
+using System;
+using System.IO;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            guardarDatosCompletos();
+        }
+
+        static void guardarDatosCompletos()
+        {
+            string archivoEntrada = @"D:/sebas 26 de marzo/Archivo_entrada.txt";
+            string archivoSalida = @"D:/sebas 26 de marzo/Archivo_salida.txt";
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(archivoEntrada))
+                using (StreamWriter writer = File.AppendText(archivoSalida))
+                {
+                    string linea;
+
+                    while ((linea = reader.ReadLine()) != null)
+                    {
+                        // Convertir la línea a un número entero
+                        if (int.TryParse(linea, out int numero))
+                        {
+                            bool esPrimo = EsPrimo(numero);
+                            string resultado = esPrimo ? "es primo" : "no es primo";
+
+                            // Formatear la salida según el formato requerido
+                            string salida = $"{numero} {resultado}";
+
+                            // Escribir la salida en el archivo de salida
+                            writer.WriteLine(salida);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"'{linea}' no es un número válido y será omitido.");
+                        }
+                    }
+                }
+
+                Console.WriteLine("Proceso completado. Se ha creado el archivo de salida.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        static bool EsPrimo(int numero)
+        {
+            if (numero <= 1)
+            {
+                return false;
+            }
+
+            for (int i = 2; i <= Math.Sqrt(numero); i++)
+            {
+                if (numero % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+}
